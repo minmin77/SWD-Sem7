@@ -30,7 +30,7 @@ public class SplashActivity extends BaseActivity implements SplashView {
     }
 
     private void initialPresenter() {
-        mPresenter = new SplashPresenter(this, getApplication());
+        mPresenter = new SplashPresenter(this, this,getApplication());
     }
 
     @Override
@@ -40,7 +40,16 @@ public class SplashActivity extends BaseActivity implements SplashView {
 
     @Override
     public void goToNoInternetActivity() {
-        NoInternetActivity.moveToNoInternetActivity(SplashActivity.this);
+        Intent intent = new Intent(this, NoInternetActivity.class);
+        startActivity(intent);
+        finish();
+    }
+
+    @Override
+    public void goToHomeScreenActivity() {
+        Intent intent = new Intent(this, HomeScreenActivity.class);
+        startActivity(intent);
+        finish();
     }
 
 //    private void printKeyHash() {

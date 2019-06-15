@@ -8,5 +8,6 @@ public class ConfigApi {
     public interface Api {
         String LOGIN_BY_FACEBOOK = "staff/{id}";
         String LOGIN_BY_GOOGLE = "/staff/google";
+        String GET_STAFF_INFO = "staff/{id}";
     }
 }

@@ -59,7 +59,6 @@ public class StaffHelper {
                                     callbackData.onFail(message);
                                 }
                             });
-                            Toast.makeText(mContext, "Room", Toast.LENGTH_LONG).show();
                         }
 
                         @Override
@@ -123,6 +122,20 @@ public class StaffHelper {
         });
     }
 
+    public void getOnlineStaff(StaffEntity staffEntity, final CallbackData<Staff> callbackData){
+        mAuthRepository = new AuthServiceImplement();
+        mAuthRepository.getStaffInfo(mContext, staffEntity.getAuthToken(), staffEntity.getStaffId(), new CallbackData<Staff>() {
+            @Override
+            public void onSuccess(Staff staff) {
+                callbackData.onSuccess(staff);
+            }
+
+            @Override
+            public void onFail(String message) {
+                callbackData.onFail(message);
+            }
+        });
+    }
 
     private void addStaffInfoToRoom(final Staff staff, final CallbackData<String> callbackData) {
         mStaffManager = new StaffManager(mContext);

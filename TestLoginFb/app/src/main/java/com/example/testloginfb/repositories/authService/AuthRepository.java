@@ -9,4 +9,6 @@ public interface AuthRepository {
     void loginByFacebook(Context context, Long staffId, CallbackData<Staff> callbackData);
 
     void loginByGoogle(Context context, String google, CallbackData<Staff> callbackData);
+
+    void getStaffInfo(Context context, String authToken, Long staffId, CallbackData<Staff> callbackData);
 }

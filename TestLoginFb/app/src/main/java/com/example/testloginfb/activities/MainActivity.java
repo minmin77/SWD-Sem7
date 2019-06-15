@@ -109,7 +109,7 @@ public class MainActivity extends BaseActivity implements MainView {
                     String fbId = loginResult.getAccessToken().getUserId();
                     //parse fbId to Int to suitable for API
                     Long intFbId = Long.parseLong(fbId);
-                    Toast.makeText(MainActivity.this, "ID:  " + fbId, Toast.LENGTH_LONG).show();
+//                    Toast.makeText(MainActivity.this, "ID:  " + fbId, Toast.LENGTH_LONG).show();
                     System.out.println("" + fbId);
                     Intent intent = new Intent(MainActivity.this, MainActivity.class);
                     Bundle bundle = new Bundle();

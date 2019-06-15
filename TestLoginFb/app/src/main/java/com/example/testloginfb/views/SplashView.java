@@ -4,4 +4,6 @@ public interface SplashView extends BaseView {
     void goToMainActivity();
 
     void goToNoInternetActivity();
+
+    void goToHomeScreenActivity();
 }
