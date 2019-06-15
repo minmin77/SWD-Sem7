@@ -14,28 +14,28 @@ public class StaffEntity {
     private int localStaffId;
 
     @ColumnInfo(name = "staff_id")
-    private int staffId;
+    private Long staffId;
 
     @ColumnInfo(name = "staff_name")
     private String staffName;
 
-//    @ColumnInfo(name = "position")
-//    private Detail position;
+    @ColumnInfo(name = "position")
+    private String position;
 
-//    @ColumnInfo(name = "store")
-//    private Store store;
+    @ColumnInfo(name = "store")
+    private String store;
 
     @ColumnInfo(name = "pic_url")
     private String picUrl;
 
-    @ColumnInfo(name = "access_token")
-    private String accessToken;
+    @ColumnInfo(name = "auth_token")
+    private String authToken;
 
     @ColumnInfo(name = "staff_mail")
     private String staffMail;
 
-//    @ColumnInfo(name = "staff_status")
-//    private Detail staffStatus;
+    @ColumnInfo(name = "staff_status")
+    private String staffStatus;
 
     public StaffEntity() {
     }
@@ -48,11 +48,11 @@ public class StaffEntity {
         this.localStaffId = localStaffId;
     }
 
-    public int getStaffId() {
+    public Long getStaffId() {
         return staffId;
     }
 
-    public void setStaffId(int staffId) {
+    public void setStaffId(Long staffId) {
         this.staffId = staffId;
     }
 
@@ -64,17 +64,36 @@ public class StaffEntity {
         this.staffName = staffName;
     }
 
+    public String getPosition() {
+        return position;
+    }
+
+    public void setPosition(String position) {
+        this.position = position;
+    }
+
+    public String getStore() {
+        return store;
+    }
+
+    public void setStore(String store) {
+        this.store = store;
+    }
+
+    public String getPicUrl() {
+        return picUrl;
+    }
 
     public void setPicUrl(String picUrl) {
         this.picUrl = picUrl;
     }
 
-    public String getAccessToken() {
-        return accessToken;
+    public String getAuthToken() {
+        return authToken;
     }
 
-    public void setAccessToken(String accessToken) {
-        this.accessToken = accessToken;
+    public void setAuthToken(String authToken) {
+        this.authToken = authToken;
     }
 
     public String getStaffMail() {
@@ -85,7 +104,11 @@ public class StaffEntity {
         this.staffMail = staffMail;
     }
 
-    public String getPicUrl() {
-        return picUrl;
+    public String getStaffStatus() {
+        return staffStatus;
+    }
+
+    public void setStaffStatus(String staffStatus) {
+        this.staffStatus = staffStatus;
     }
 }

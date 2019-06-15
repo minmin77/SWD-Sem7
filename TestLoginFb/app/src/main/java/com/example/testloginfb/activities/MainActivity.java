@@ -3,14 +3,12 @@ package com.example.testloginfb.activities;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.Toast;
 
 import com.example.testloginfb.R;
 import com.example.testloginfb.presenters.MainPresenter;
-import com.example.testloginfb.room.entities.StaffEntity;
 import com.example.testloginfb.views.MainView;
 import com.facebook.CallbackManager;
 import com.facebook.FacebookCallback;
@@ -108,7 +106,9 @@ public class MainActivity extends BaseActivity implements MainView {
                 if (loginResult != null) {
                     setResult(RESULT_OK);
                     System.out.println("Access Token: " + loginResult.getAccessToken());
-                    String fbId = loginResult.getAccessToken().getToken();
+                    String fbId = loginResult.getAccessToken().getUserId();
+                    //parse fbId to Int to suitable for API
+                    Long intFbId = Long.parseLong(fbId);
                     Toast.makeText(MainActivity.this, "ID:  " + fbId, Toast.LENGTH_LONG).show();
                     System.out.println("" + fbId);
                     Intent intent = new Intent(MainActivity.this, MainActivity.class);
@@ -116,7 +116,7 @@ public class MainActivity extends BaseActivity implements MainView {
                     bundle.putString("face", "Login by facebook :   " + fbId);
                     intent.putExtras(bundle);
                     startActivity(intent);
-//                    mPresenter.handleLoginWithFacebook(accessToken);
+                    mPresenter.handleLoginWithFacebook(intFbId);
                 }
             }
 
@@ -158,7 +158,10 @@ public class MainActivity extends BaseActivity implements MainView {
 
     @Override
     public void goToHomeActivity() {
-        HomeScreenActivity.moveToMainActivity(MainActivity.this);
+//        HomeScreenActivity.moveToHomeScreenActivity(MainActivity.this);
+        Intent intent = new Intent(this, HomeScreenActivity.class);
+        startActivity(intent);
+        finish();
     }
 
     @Override

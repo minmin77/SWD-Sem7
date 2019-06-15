@@ -6,7 +6,7 @@ import java.io.Serializable;
 
 public class Staff implements Serializable {
     @SerializedName("id")
-    private int staffId;
+    private Long staffId;
 
     @SerializedName("name")
     private String staffName;
@@ -20,8 +20,8 @@ public class Staff implements Serializable {
     @SerializedName("picUrl")
     private String pictureUrl;
 
-    @SerializedName("accessToken")
-    private String accessToken;
+    @SerializedName("authToken")
+    private String authToken;
 
     @SerializedName("gmail")
     private String staffGoogle;
@@ -32,11 +32,11 @@ public class Staff implements Serializable {
     public Staff() {
     }
 
-    public int getStaffId() {
+    public Long getStaffId() {
         return staffId;
     }
 
-    public void setStaffId(int staffId) {
+    public void setStaffId(Long staffId) {
         this.staffId = staffId;
     }
 
@@ -72,12 +72,12 @@ public class Staff implements Serializable {
         this.pictureUrl = pictureUrl;
     }
 
-    public String getAccessToken() {
-        return accessToken;
+    public String getAuthToken() {
+        return authToken;
     }
 
-    public void setAccessToken(String accessToken) {
-        this.accessToken = accessToken;
+    public void setAuthToken(String authToken) {
+        this.authToken = authToken;
     }
 
     public String getStaffGoogle() {

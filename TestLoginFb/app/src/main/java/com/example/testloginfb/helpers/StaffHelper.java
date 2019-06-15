@@ -35,30 +35,30 @@ public class StaffHelper {
         });
     }
 
-    public void processLoginByFacebook(String accessToken, final CallbackData<Staff> callbackData) {
+    public void processLoginByFacebook(Long staffId, final CallbackData<Staff> callbackData) {
         mAuthRepository = new AuthServiceImplement();
-        mAuthRepository.loginByFacebook(mContext, accessToken, new CallbackData<Staff>() {
+        mAuthRepository.loginByFacebook(mContext, staffId, new CallbackData<Staff>() {
             @Override
             public void onSuccess(final Staff staff) {
                 if (staff != null) {
                     addStaffInfoToRoom(staff, new CallbackData<String>() {
                         @Override
                         public void onSuccess(String s) {
-//                            getLocalStaff(new CallbackData<StaffEntity>() {
-//                                @Override
-//                                public void onSuccess(StaffEntity staffEntity) {
-//                                    if (staffEntity != null) {
-//                                        callbackData.onSuccess(staff);
-//                                    } else {
-//                                        callbackData.onFail("null entity");
-//                                    }
-//                                }
-//
-//                                @Override
-//                                public void onFail(String message) {
-//                                    callbackData.onFail(message);
-//                                }
-//                            });
+                            getLocalStaff(new CallbackData<StaffEntity>() {
+                                @Override
+                                public void onSuccess(StaffEntity staffEntity) {
+                                    if (staffEntity != null) {
+                                        callbackData.onSuccess(staff);
+                                    } else {
+                                        callbackData.onFail("null entity");
+                                    }
+                                }
+
+                                @Override
+                                public void onFail(String message) {
+                                    callbackData.onFail(message);
+                                }
+                            });
                             Toast.makeText(mContext, "Room", Toast.LENGTH_LONG).show();
                         }
 
@@ -70,6 +70,7 @@ public class StaffHelper {
                 } else {
                     callbackData.onFail("Phone fail");
                 }
+                callbackData.onSuccess(staff);
             }
 
             @Override
