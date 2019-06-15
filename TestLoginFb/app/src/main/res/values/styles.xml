@@ -7,6 +7,11 @@
         <item name="colorPrimaryDark">@color/color_green</item>
         <item name="colorAccent">@color/colorAccent</item>
         <item name="windowNoTitle">true</item>
+        <item name="android:actionMenuTextColor">@style/MyActionBarMenuText</item>
+    </style>
+
+    <style name="MyActionBarMenuText" parent="@style/TextAppearance.AppCompat.Widget.ActionBar.Menu">
+        <item name="android:textColor">@color/color_white</item>
     </style>
 
 </resources>
