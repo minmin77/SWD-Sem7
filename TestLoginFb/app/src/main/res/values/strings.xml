@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">TestLoginFb</string>
+    <string name="facebook_app_id">298031641077220</string>
+    <string name="fb_login_protocol_scheme">fb298031641077220</string>
+    <string name="sign_in_google">Đăng nhập bằng Google</string>
+    <string name="sign_in_facebook">Đăng nhập bằng Facebook</string>
+    <string name="LOST_INTERNET">MẤT KẾT NỐI</string>
+    <string name="no_internet_message">Dây cáp bị cá mập cắn đứt rồi.\nVui lòng thử lại sau giây lát.</string>
+    <string name="TRY_AGAIN">THỬ LẠI</string>
+    <string name="STOCK">HÀNG TỒN</string>
+    <string name="HISTORY">LỊCH SỬ</string>
+    <string name="TRANSACTION">GIAO DỊCH</string>
+    <string name="RECEIPT">NHẬP HÀNG</string>
+    <string name="ISSUE">XUẤT HÀNG</string>
+    <string name="CHECK">KIỂM KHO</string>
+</resources>

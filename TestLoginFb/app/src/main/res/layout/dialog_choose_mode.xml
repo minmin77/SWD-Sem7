@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/lnl_dialog"
+    android:layout_width="@dimen/dp328"
+    android:layout_height="@dimen/dp243"
+    android:background="@drawable/radius_10"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/lnl_dialog_receipt"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp80">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/dp16"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="@dimen/dp84"
+                android:layout_height="@dimen/dp49"
+                android:gravity="center">
+
+                <ImageView
+                    android:layout_width="@dimen/dp30"
+                    android:layout_height="@dimen/dp30"
+                    android:layout_marginRight="@dimen/dp16"
+                    android:src="@mipmap/ic_receipt"
+                    android:tint="@color/color_green" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="@dimen/dp2"
+                android:layout_height="match_parent"
+                android:background="@color/color_gray" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="@dimen/dp16"
+                android:gravity="center"
+                android:text="@string/RECEIPT"
+                android:textColor="@color/color_green"
+                android:textSize="@dimen/sp16"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp2"
+        android:layout_marginLeft="@dimen/dp16"
+        android:layout_marginRight="@dimen/dp16"
+        android:background="@color/color_gray" />
+
+    <LinearLayout
+        android:id="@+id/lnl_dialog_issue"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp80">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/dp16"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="@dimen/dp84"
+                android:layout_height="@dimen/dp49"
+                android:gravity="center">
+
+                <ImageView
+                    android:layout_width="@dimen/dp30"
+                    android:layout_height="@dimen/dp30"
+                    android:layout_marginRight="@dimen/dp16"
+                    android:src="@mipmap/ic_issue"
+                    android:tint="@color/color_green" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="@dimen/dp2"
+                android:layout_height="match_parent"
+                android:background="@color/color_gray" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="@dimen/dp16"
+                android:gravity="center"
+                android:text="@string/ISSUE"
+                android:textColor="@color/color_green"
+                android:textSize="@dimen/sp16"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp2"
+        android:layout_marginLeft="@dimen/dp16"
+        android:layout_marginRight="@dimen/dp16"
+        android:background="@color/color_gray" />
+
+    <LinearLayout
+        android:id="@+id/lnl_dialog_check"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp80">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/dp16"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="@dimen/dp84"
+                android:layout_height="@dimen/dp49"
+                android:gravity="center">
+
+                <ImageView
+                    android:layout_width="@dimen/dp30"
+                    android:layout_height="@dimen/dp30"
+                    android:layout_marginRight="@dimen/dp16"
+                    android:src="@mipmap/ic_check"
+                    android:tint="@color/color_green" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="@dimen/dp2"
+                android:layout_height="match_parent"
+                android:background="@color/color_gray" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="@dimen/dp16"
+                android:gravity="center"
+                android:text="@string/CHECK"
+                android:textColor="@color/color_green"
+                android:textSize="@dimen/sp16"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>
