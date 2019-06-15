@@ -6,13 +6,13 @@ import java.io.Serializable;
 
 public class Store implements Serializable {
     @SerializedName("id")
-    private int storeId;
+    private String storeId;
 
     @SerializedName("name")
-    private int storeName;
+    private String storeName;
 
     @SerializedName("location")
-    private int storeLocation;
+    private String storeLocation;
 
     @SerializedName("status")
     private Detail storeDetail;
@@ -20,34 +20,34 @@ public class Store implements Serializable {
     public Store() {
     }
 
-    public Store(int storeId, int storeName, int storeLocation, Detail storeDetail) {
+    public Store(String storeId, String storeName, String storeLocation, Detail storeDetail) {
         this.storeId = storeId;
         this.storeName = storeName;
         this.storeLocation = storeLocation;
         this.storeDetail = storeDetail;
     }
 
-    public int getStoreId() {
+    public String getStoreId() {
         return storeId;
     }
 
-    public void setStoreId(int storeId) {
+    public void setStoreId(String storeId) {
         this.storeId = storeId;
     }
 
-    public int getStoreName() {
+    public String getStoreName() {
         return storeName;
     }
 
-    public void setStoreName(int storeName) {
+    public void setStoreName(String storeName) {
         this.storeName = storeName;
     }
 
-    public int getStoreLocation() {
+    public String getStoreLocation() {
         return storeLocation;
     }
 
-    public void setStoreLocation(int storeLocation) {
+    public void setStoreLocation(String storeLocation) {
         this.storeLocation = storeLocation;
     }
 

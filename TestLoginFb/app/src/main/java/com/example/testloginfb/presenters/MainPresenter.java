@@ -2,6 +2,7 @@ package com.example.testloginfb.presenters;
 
 import android.app.Application;
 import android.content.Context;
+import android.widget.Toast;
 
 import com.example.testloginfb.callbacks.CallbackData;
 import com.example.testloginfb.helpers.StaffHelper;
@@ -19,16 +20,17 @@ public class MainPresenter {
         this.mStaffHelper = new StaffHelper(application);
     }
 
-    public void handleLoginWithFacebook(String accessToken) {
-        mStaffHelper.processLoginByFacebook(accessToken, new CallbackData<Staff>() {
+    public void handleLoginWithFacebook(Long staffId) {
+        mStaffHelper.processLoginByFacebook(staffId, new CallbackData<Staff>() {
             @Override
             public void onSuccess(Staff staff) {
-                mView.dismissProgressHUD();
+                mView.showProgressHUD();
                 mView.goToHomeActivity();
             }
 
             @Override
             public void onFail(String message) {
+                Toast.makeText(mContext, "Hổng được", Toast.LENGTH_LONG).show();
                 mView.showToastMessage(message);
                 mView.dismissProgressHUD();
             }

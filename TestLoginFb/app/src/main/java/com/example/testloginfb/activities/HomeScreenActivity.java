@@ -1,8 +1,6 @@
 package com.example.testloginfb.activities;
 
-import android.app.Activity;
 import android.app.Dialog;
-import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
@@ -14,41 +12,33 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.example.testloginfb.R;
+import com.example.testloginfb.presenters.HomeScreenPresenter;
 import com.example.testloginfb.room.entities.StaffEntity;
+import com.example.testloginfb.views.HomeScreenView;
 
 
-public class HomeScreenActivity extends BaseActivity implements View.OnClickListener {
+public class HomeScreenActivity extends BaseActivity implements HomeScreenView, View.OnClickListener {
     private Toolbar mToolbar;
     private Button mBtnHistory, mBtnTransaction, mBtnStock;
     private ImageView mImgNoti;
     private TextView mTxtStore, mTxtStaffName;
-    private StaffEntity mStaffEntity;
-
-    public static void moveToMainActivity(Activity activity) {
-        Intent intentToMainActivity = new Intent(activity, MainActivity.class);
-        activity.startActivity(intentToMainActivity);
-    }
-
+    private HomeScreenPresenter mHomeScreenPresenter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_screen);
         initialView();
-//        initialData();
+        initialData();
     }
 
     private void initialData() {
-        mTxtStaffName.setText(mStaffEntity.getStaffName());
-//        mTxtStore.setText(mStaffEntity.getStoreId());
+        mHomeScreenPresenter = new HomeScreenPresenter(this, this, getApplication());
+        mHomeScreenPresenter.handleLoadStaffFromRoom();
     }
 
     private void initialView() {
         mToolbar = findViewById(R.id.tb_home_screen);
-//        setSupportActionBar(mToolbar);
-//        getSupportActionBar().setElevation(0);
-//        //todo: show employee and store
-//        getSupportActionBar().setTitle("");
         mBtnHistory = findViewById(R.id.btn_home_screen_history);
         mBtnTransaction = findViewById(R.id.btn_home_screen_transaction);
         mBtnStock = findViewById(R.id.btn_home_screen_stock);
@@ -102,5 +92,11 @@ public class HomeScreenActivity extends BaseActivity implements View.OnClickList
             }
         });
         dialog.show();
+    }
+
+    @Override
+    public void loadLocalStaff(StaffEntity staffEntity) {
+        mTxtStore.setText(staffEntity.getStore() + ",");
+        mTxtStaffName.setText("Xin chào " + staffEntity.getPosition().toLowerCase() + " " + staffEntity.getStaffName() + ("!"));
     }
 }

@@ -6,32 +6,32 @@ import java.io.Serializable;
 
 public class Detail implements Serializable {
     @SerializedName("id")
-    private int detailId;
+    private String detailId;
 
     @SerializedName("name")
-    private int detailName;
+    private String detailName;
 
     public Detail() {
     }
 
-    public Detail(int detailId, int detailName) {
+    public Detail(String detailId, String detailName) {
         this.detailId = detailId;
         this.detailName = detailName;
     }
 
-    public int getDetailId() {
+    public String getDetailId() {
         return detailId;
     }
 
-    public void setDetailId(int detailId) {
+    public void setDetailId(String detailId) {
         this.detailId = detailId;
     }
 
-    public int getDetailName() {
+    public String getDetailName() {
         return detailName;
     }
 
-    public void setDetailName(int detailName) {
+    public void setDetailName(String detailName) {
         this.detailName = detailName;
     }
 }

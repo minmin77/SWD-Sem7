@@ -18,28 +18,29 @@ import retrofit2.Response;
 
 public class AuthServiceImplement implements AuthRepository {
     @Override
-    public void loginByFacebook(Context context, String accessToken, final CallbackData<Staff> callbackData) {
+    public void loginByFacebook(Context context, Long staffId, final CallbackData<Staff> callbackData) {
         ClientApi clientApi = new ClientApi();
-        Call<ResponseBody> serviceCall = clientApi.getAuthService().loginByFacebook(accessToken);
-        serviceCall.enqueue(new Callback<ResponseBody>() {
+        Call<Staff> serviceCall = clientApi.getAuthService().loginByFacebook(staffId);
+        serviceCall.enqueue(new Callback<Staff>() {
             @Override
-            public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
+            public void onResponse(Call<Staff> call, Response<Staff> response) {
                 if (response != null && response.body() != null) {
                     if (response.code() == 200) {
-                        try {
-                            String result = response.body().string();
-                            Type type = new TypeToken<Staff>() {
-                            }.getType();
-                            Staff staff = new Gson().fromJson(result, type);
-                            if (staff != null) {
-                                callbackData.onSuccess(staff);
-                            } else {
-                                callbackData.onFail("No Data");
-                            }
-
-                        } catch (IOException e) {
-                            e.printStackTrace();
+//                        try {
+//                            String result = response.body().string();
+//                        Type type = new TypeToken<Staff>() {
+//                        }.getType();
+//                            Staff staff = new Gson().fromJson(result, type);
+                        Staff staff = response.body();
+                        if (staff != null) {
+                            callbackData.onSuccess(staff);
+                        } else {
+                            callbackData.onFail("No Data");
                         }
+
+//                        } catch (IOException e) {
+//                            e.printStackTrace();
+//                        }
                     }
                 } else {
                     callbackData.onFail("No data");
@@ -47,7 +48,7 @@ public class AuthServiceImplement implements AuthRepository {
             }
 
             @Override
-            public void onFailure(Call<ResponseBody> call, Throwable t) {
+            public void onFailure(Call<Staff> call, Throwable t) {
                 callbackData.onFail("No Data");
             }
         });

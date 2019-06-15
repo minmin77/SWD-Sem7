@@ -8,12 +8,12 @@ public class TypeConverter {
         StaffEntity staffEntity = new StaffEntity();
         staffEntity.setStaffId(staff.getStaffId());
         staffEntity.setStaffName(staff.getStaffName());
-//        staffEntity.setPosition(staff.getStaffPosition());
-//        staffEntity.setStore(staff.getStoreId());
+        staffEntity.setPosition(staff.getStaffPosition().getDetailName());
+        staffEntity.setStore(staff.getStoreId().getStoreName());
         staffEntity.setPicUrl(staff.getPictureUrl());
-        staffEntity.setAccessToken(staff.getAccessToken());
+        staffEntity.setAuthToken(staff.getAuthToken());
         staffEntity.setStaffMail(staff.getStaffGoogle());
-//        staffEntity.setStaffStatus(staff.getStaffStatus());
+        staffEntity.setStaffStatus(staff.getStaffStatus().getDetailName());
         return staffEntity;
     }
 }
